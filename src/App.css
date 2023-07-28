@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +33,276 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* html {
+  font-family: "Montserrat", sans-serif;
+} */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.chat-container {
+  display: flex;
+  width: 100vw; /* Make the chat container span the entire screen */
+}
+
+.chat-box {
+  border: 1px solid #ccc;
+  flex: 1; /* Each chat box will take equal space */
+  height: 97vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.chat-title {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chat-input {
+  display: flex;
+  margin-top: auto;
+  height:50px;
+  padding:10px;
+  background-color: white;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 5px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.chat-input button {
+  padding: 5px;
+  color: rgb(17, 16, 16);
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.chat-input button:hover{
+background-color: #f6f6f6;
+}
+
+body {
+background: #f6f6f6;
+}
+
+#app {
+height: 100vh;
+background: #343541;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+}
+
+#chat_container {
+flex: 1;
+width: 100%;
+height: 100%;
+overflow-y: scroll;
+
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+-ms-overflow-style: none;
+scrollbar-width: none;
+
+padding-bottom: 20px;
+scroll-behavior: smooth;
+}
+
+#chat_container::-webkit-scrollbar {
+display: none;
+}
+
+.ai {
+background: #cfcfd1;
+padding: 5px;
+color: white;
+}
+
+.user{
+  background: #b7b7bc;
+  padding: 5px;
+
+  color: white;
+}
+
+.chat1 {
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+background-color: #ececf0;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 10px;
+}
+
+.chat2 {
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+background-color: #f4f4f6;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 7px;
+margin-top: 10px;
+}
+
+.userimg{
+  background: #5436DA;
+  width: 46px;
+height: 46px;
+border-radius: 5px;
+}
+
+.botimg {
+background: #33daa8;
+width: 46px;
+height: 46px;
+border-radius: 5px;
+}
+
+
+.profile img {
+width: 75%;
+height: 75%;
+object-fit: contain;
+}
+
+.message {
+flex: 1;
+
+color: #0c0c0c;
+background-color: #ececf0;
+margin: 5px;
+padding: 10px;
+max-width: 100%;
+overflow-x: scroll;
+
+white-space: pre-wrap; 
+
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+.response {
+  flex: 1;
+
+  color: #302e2e;
+  background-color: #f4f4f6;
+  margin: 5px;
+  padding: 10px;
+  max-width: 100%;
+  overflow-x: scroll;
+
+  white-space: pre-wrap; 
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+display: none;
+}
+
+form {
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+padding: 10px;
+background: #40414F;
+
+display: flex;
+flex-direction: row;
+gap: 10px;
+}
+
+.textarea {
+width: 100%;
+
+color: #fff;
+font-size: 18px;
+
+padding: 10px;
+background: transparent;
+border-radius: 5px;
+border: none;
+outline: none;
+}
+
+button {
+outline: 0;
+border: 0;
+cursor: pointer;
+background: transparent;
+}
+
+form img {
+width: 30px;
+height: 30px;
+}
+
+select{
+width:180%;
+background:white;
+padding: 8px;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add the box-shadow */
+border: 1px solid #ccc; /* Add a border for better visibility */
+background-color: #fff;
+}
+
+option{
+font-family: "Montserrat", sans-serif;
+}
+
+.model{
+display: flex;
+justify-content: space-between;
+}
+
+.m{
+display: flex;
+align-items: center;
+padding: 10px;
+}
+
+.icons{
+display: flex;
+align-items: center;
+}
+
+i{
+padding: 10px;
+height: 20px;
+width: 20px;
 }
