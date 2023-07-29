@@ -1,0 +1,26 @@
+<div id="chatMessages1">
+    {chatBoxOne &&
+      chatBoxOne.map((item, index) => (
+        <div key={index}>
+          {item.user === "User" ? (
+            <div className="chat1">
+                <div className="profile">
+                    <img className="userimg" src={usericon} />
+                </div>
+                <div className="message">{item.message}</div>
+            </div>
+          ) : (
+            <div className="chat2">
+                <div className="profile">
+                    <img className="botimg" src={boticon} />
+                </div>
+              {loading ? (
+                <div className="loading-animation">{loading}</div>
+              ) : (
+                <div className="response">{responseMessage}</div>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+  </div>
