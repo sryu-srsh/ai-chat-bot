@@ -281,10 +281,12 @@ border-radius: 5px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add the box-shadow */
 border: 1px solid #ccc; /* Add a border for better visibility */
 background-color: #fff;
+cursor: pointer;
 }
 
 option{
 font-family: "Montserrat", sans-serif;
+cursor: pointer;
 }
 
 .model{
@@ -307,4 +309,10 @@ i{
 padding: 10px;
 height: 20px;
 width: 20px;
+}
+
+i:hover{
+  background-color: #282c34;
+  color:#b7b7bc;
+  cursor: pointer;
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import usericon from '../assets/user.svg';
 import boticon from '../assets/bot.svg';
 
-const ChatBox = () => {
+const ChatBox = ({key, count, increaseCount}) => {
     const [chatBoxOne, setChatBoxOne] = useState([])
     const [chatOneInput, setChatOneInput] = useState("")
     const [select, setSelect] = useState('gpt2')
@@ -85,9 +85,8 @@ const ChatBox = () => {
       };
     return ( 
     <div className="chat-box" id="chatBox1">
-    <div className="model">
+     <div className="model">
         <div className="m">
-            <i className="fa-solid fa-grip-vertical"></i>
             <select id="models" name="models" value={select} onChange={(e) => {
                 setSelect(e.target.value)
             }}>
@@ -97,10 +96,8 @@ const ChatBox = () => {
             </select>
         </div>
             <div className="icons">
-                <i className="fa-solid fa-code"></i>
-                <i className="fa-solid fa-minus"></i>
-                <i className="fa-solid fa-plus"></i>
-                <i className="fa-solid fa-gear"></i>
+                <i className="fa-solid fa-minus" disabled={count == 1} onClick={() => increaseCount(-1)}></i>
+                <i className="fa-solid fa-plus" onClick={() => increaseCount(1)}></i>
             </div>
     </div>
     
