@@ -1,0 +1,36 @@
+import React from 'react';
+import ChangeHistoryIcon from '@mui/icons-material/ChangeHistory';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import IosShareIcon from '@mui/icons-material/IosShare';
+
+function Header() {
+ 
+  return (
+    <header>
+      <ChangeHistoryIcon className="icon" style={{ fontSize: 36 }} />
+      <span className="slash">/</span>
+      <AutoAwesomeIcon className="icon" style={{ fontSize: 15 }}  />
+      <span className='Title'>AI</span>
+      <div className="pricing-toggle">
+        <input type="radio" id="pricing-toggle-monthly" name="pricing"  checked />
+        <label className="radio-button" style={{ fontSize: 14 }} htmlFor="pricing-toggle-monthly"> Chat</label>
+        <input type="radio" id="pricing-toggle-annually" name="pricing"/>
+        <label className="radio-button" style={{ fontSize: 14 }} htmlFor="pricing-toggle-annually"> Prompt</label>
+      </div>
+      <div id="out"></div>
+      <span className='Docs'>Docs</span>
+     
+     
+     <button class ="buttonlo">
+         <IosShareIcon className='Shareicon'  style={{ fontSize: 16 }}/>
+         <span classname= 'Sharechat' > Share Chat</span>
+      </button> 
+      <button class ="buttonlogin">
+         <ChangeHistoryIcon className="Shareicon" style={{ fontSize: 16 }} />
+         <span classname= 'Sharechat' > Login with Vercel</span>
+      </button> 
+    </header>
+  );
+}
+
+export default Header;

@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import usericon from '../assets/user.svg';
 import boticon from '../assets/bot.svg';
+import { ChatContext } from "../App";
+
 
 const ChatBox = ({key, count, increaseCount}) => {
+  const {sharedInput, setSharedInput, sync, sendBtn, setSendBtn } = useContext(ChatContext)
     const [chatBoxOne, setChatBoxOne] = useState([])
     const [chatOneInput, setChatOneInput] = useState("")
-    const [select, setSelect] = useState('gpt2')
+    const [select, setSelect] = useState("gpt2")
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+      if(sync) {
+        setChatOneInput(sharedInput)
+      }
+    }, [sharedInput])
   
     const chatBoxOneButtonHandler = () => {
         setChatBoxOne((prev) => ([
@@ -83,8 +92,16 @@ const ChatBox = ({key, count, increaseCount}) => {
       
         setChatOneInput("");
       };
+
+      useEffect(() => {
+        if(sync && sendBtn && chatOneInput && chatOneInput.length) {
+          chatBoxOneButtonHandler({select})
+          setSendBtn(false)
+        }
+      }, [sendBtn])
+
     return ( 
-    <div className="chat-box" id="chatBox1">
+    <div className="chat-box" id="chatBox1" key={key}>
      <div className="model">
         <div className="m">
             <select id="models" name="models" value={select} onChange={(e) => {
@@ -120,8 +137,15 @@ const ChatBox = ({key, count, increaseCount}) => {
   })}
     </div>
     <div className="chat-input">
-        <input type="text" id="chatInput1" value={chatOneInput} onChange={(e) => setChatOneInput(e.target.value)} placeholder="Send a message"/>
-        <button id="button1" onClick={() => chatBoxOneButtonHandler({select})}><i className="fa-solid fa-paper-plane"></i></button>
+        <input type="text" id="chatInput1" value={chatOneInput} onChange={(e) => {
+          console.log(sync)
+          if(sync) {
+            setSharedInput(e.target.value)
+          } else {
+            setChatOneInput(e.target.value)
+          }
+        }} placeholder="Send a message"/>
+        <button id="button1" onClick={() => sync ? setSendBtn(true) : chatBoxOneButtonHandler({select})}><i className="fa-solid fa-paper-plane"></i></button>
     </div>
 </div>)
 }

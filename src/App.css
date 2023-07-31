@@ -1,29 +1,38 @@
+header {
+  padding: 16px 16px;
+  display: flex;
+  align-items: center; 
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
 
+.Title {
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttonlogin {
+  position: absolute;
+  right: 10px; 
+  display: flex; 
+  align-items: center; 
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: black;
+  border: black;
+  border-width:thin;
+  color: white;
+  padding: 8px 6px;
+  text-decoration-color: #52525B;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -53,7 +62,7 @@ body {
 .chat-box {
   border: 1px solid #ccc;
   flex: 1; /* Each chat box will take equal space */
-  height: 97vh;
+  height: 91vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -315,4 +324,15 @@ i:hover{
   background-color: #282c34;
   color:#b7b7bc;
   cursor: pointer;
+}
+
+.checker{
+  display: flex;
+  margin: auto;
+}
+
+.check{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }

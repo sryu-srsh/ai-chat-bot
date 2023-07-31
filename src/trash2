@@ -4,7 +4,6 @@ import ChatBox from './Components/ChatBox';
 
 function App() {
   const [count, updateCount] = useState(1);
-  const [toggler, setToggler] = useState(true);
 
   const increaseCount = (val) => {
     if (count === 1 && val === -1) {
@@ -13,19 +12,14 @@ function App() {
     updateCount(count + val);
   };
 
-  const toggleInputs = () => {
-    setToggler((prev) => !prev);
-  };
-
   const rows = [];
   for (let i = 0; i < count; i++) {
-    rows.push(<ChatBox key={i} count={count} toggler={toggler} setToggler={setToggler} increaseCount={increaseCount} />);
+    rows.push(<ChatBox key={i} count={count} increaseCount={increaseCount} />);
   }
 
   return (
     <div className="App">
       <div className="chat-container">
-      <button onClick={toggleInputs}>Toggle Input Synchronization: {toggler ? 'On' : 'Off'}</button>
         {rows}
       </div>
     </div>
